@@ -1,15 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GrAddCircle } from "react-icons/gr";
 import { BsAlignStart } from "react-icons/bs";
 import { FiSettings } from "react-icons/fi";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import { MdDoneAll } from "react-icons/md";
 import Radioutton from "../elements/Radioutton";
+import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 function AddTodoPage() {
   const [title, setTitle] = useState("");
   const [descriptions, setDescriptions] = useState("");
   const [status, setStatus] = useState("todo");
+
+  const session = useSession();
+
+  useEffect(() => {
+    if (session.status == "unauthenticated") {
+      toast.error("Please Login in Todos Page!");
+    }
+  }, []);
 
   const addHandler = async () => {
     const res = await fetch("/api/todos", {

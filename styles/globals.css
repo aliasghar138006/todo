@@ -18,6 +18,7 @@ a {
 header {
   background-color: #3f47f4;
   height: 150px;
+  width: 100%;
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -47,12 +48,18 @@ header button svg {
 
 aside {
   background-color: #fff;
-  width: 200px;
+  width: 250px;
   position: relative;
   bottom: 80px;
   border-top-right-radius: 20px;
   color: #7f7e86;
-  padding: 40px;
+  padding: 10px;
+}
+
+@media (max-width : 478) {
+  aside {
+    width: 36%;
+  }
 }
 aside p {
   color: #494a52;
@@ -79,10 +86,15 @@ li {
 }
 
 section {
+  display: inline-block;
   background-color: #f4f5fa;
-  flex-grow: 1;
-  padding: 10px;
-  /* width: 100%; */
+  width: 100%;
+}
+
+@media (max-width : 478) {
+  section {
+    width: 64%;
+  }
 }
 
 h2 {
@@ -99,7 +111,7 @@ h2 svg {
 .add-form {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
 }
 
 
@@ -195,7 +207,7 @@ button {
 }
 
 .profile-form {
-  padding: 20px;
+  padding: 10px;
 }
 
 .profile-form__input {

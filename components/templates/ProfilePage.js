@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { CgProfile } from "react-icons/cg";
 import ProfileEdit from "../modules/ProfileEdit";
 import ProfileData from "../modules/ProfileData";
+import { useSession } from "next-auth/react";
 
 function ProfilePage() {
   const [name, setName] = useState("");
@@ -10,8 +11,12 @@ function ProfilePage() {
   const [password, setPassword] = useState("");
 
   const [data, setData] = useState({});
+  const { status } = useSession();
 
   useEffect(() => {
+    if (status == "unauthenticated") {
+      toast.error("Please Login in Todos Page!");
+    }
     fetchData();
   }, []);
 
