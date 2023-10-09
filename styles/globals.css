@@ -15,14 +15,15 @@ a {
   margin: 0;
 }
 
+
 header {
   background-color: #3f47f4;
   height: 150px;
-  width: 100%;
+  width: 100% !important;
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
-  padding: 20px 10px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -42,23 +43,29 @@ header button svg {
 }
 
 .container--main {
+  
   display: flex;
   min-height: calc(100vh - 150px);
 }
 
+.container {
+  position: relative;
+}
+
 aside {
   background-color: #fff;
-  width: 250px;
-  position: relative;
+  width: 20%;
+  position: absolute;
+  top: 10%;
   bottom: 80px;
   border-top-right-radius: 20px;
   color: #7f7e86;
   padding: 10px;
 }
 
-@media (max-width : 478) {
+@media (max-width : 654px) {
   aside {
-    width: 36%;
+    width: 35%;
   }
 }
 aside p {
@@ -88,14 +95,20 @@ li {
 section {
   display: inline-block;
   background-color: #f4f5fa;
-  width: 100%;
+  width: 80%;
+  margin-left: 20%;
 }
 
-@media (max-width : 478) {
+@media (max-width: 654px) {
   section {
-    width: 64%;
+    width: 65%;
+    margin-left: 35%;
   }
 }
+
+
+
+
 
 h2 {
   color: #494a52;
@@ -365,11 +378,12 @@ button {
 .signin-form {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
   align-items: center;
   margin: auto;
   margin-top: 100px;
-  padding: 50px;
+  padding: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   background-color: #fff;
   border-radius: 20px;
@@ -382,9 +396,11 @@ button {
 
 .signin-form input {
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .signin-form div {
+  width: 100%;
   margin-top: 50px;
   display: flex;
   color: #7f7e86;
